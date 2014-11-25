@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Intro - Trainning 5</title>      
+	<style>
+		body { padding: 25px; font-family: helvetica;}
+	</style>
+	<script src="angular.min.js"></script>
+	<script src="main.js"></script>
+	<script src="test.js"></script>
+  </head>
+
+<body ng-app="myApp">
+	<main>
+		<select name="superheros" id="superheros" ng-model="supername">
+			<option value="Batman">Batman</option>
+			<option value="Superman">Superman</option>
+			<option value="Aquaman">Aquaman</option>
+		</select>
+
+		<h1>Your superhero is: <strong>{{ supername }}</strong></h1>
+	</main>
+</body>	
+</html>
