@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Intro - Trainning 1</title>  
+    <script src="angular.min.js"></script>
+  </head>
+<body ng-app="myApp">
+	<section ng-controller="MainController" class="pure-u-1-1">
+		<h1>User Profile</h1>
+		<ul>
+			<li><strong>Name:</strong> {{ name }}</li>
+			<li><strong>Lastname:</strong> {{ lastname }}</li>
+			<li><strong>Gender:</strong> {{ gender }}</li>
+			<li><strong>Age:</strong> {{ age }}</li>
+			<li><strong>Superpower:</strong> {{superpower }}</li>
+		</ul>
+	</section>
+
+	<script>
+		angular.module('myApp', [])
+			.controller('MainController',
+				function MainController($scope){
+					$scope.name = "Andres";
+					$scope.lastname = "Coda";
+					$scope.gender = "M";
+					$scope.age = "30 years";
+					$scope.superpower = "Bionic audition";
+
+					$scope.recipe = [
+						{ name : "All purpose flour", value: "2 cups"},
+						{ name : "White sugar", value: "2 cups"},
+						{ name : "Eggs", value: "2"},
+						{ name : "Magic Powder", value: "2 cups"},
+						{ name : "All purpose flour", value: "1 cups"},
+					]
+				});
+	</script>
+
+	<h1>Silly example</h1>
+	<label for="name">
+		Write down your name <br/><br/>
+		<input id="name" type="text" ng-model="name">
+	</label>
+	<h2>Hello {{name}}</h2>
+
+	<h1>Cake recipe</h1>
+	<ul ng-controller="MainController">
+		<li ng-repeat="ingredient in recipe">
+			{{ ingredient.name }} {{ ingredient.value }}
+		</li>
+	</ul>
+</body>
+</html>
